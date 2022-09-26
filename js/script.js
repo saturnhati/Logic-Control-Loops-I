@@ -19,6 +19,16 @@ function getCurrentDate() {
     document.getElementById('current-date-eur').innerHTML = `La data di oggi è ${currentDateIT} e l'ora è ${currentTimeIT}`
 }
 
+
+// Function for clock
+setInterval(() => {
+    let currentDate = new Date()
+    let currentTimeIT = currentDate.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit', seconds: '2-digit' })
+    document.getElementById('curr-hours').innerHTML = currentDate.getHours()
+    document.getElementById('curr-minutes').innerHTML = currentDate.getMinutes()
+    document.getElementById('curr-seconds').innerHTML = currentDate.getSeconds()
+}, 1000);
+
 // Function for countdown
 let time = new Date()
 time.setTime(1000 * 21)
