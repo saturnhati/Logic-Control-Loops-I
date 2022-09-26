@@ -1,15 +1,16 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: lightgreen;
+    background-color: black;
 }
 
 .container {
     margin-top: 2vh;
     text-align: center;
     height: 340px;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 6px;
-    background-color: white;
+    background-color: black;
+    color: white;
 }
 
 .container-small {
@@ -22,7 +23,7 @@ body {
     gap: 8px;
     align-items: center;
     font-size: 2rem;
-    color: black;
+    color: white;
 }
 
 .container div {
@@ -36,27 +37,27 @@ body {
 button {
     margin: 16px;
     background-color: lightgray;
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 6px 10px;
     border-radius: 4px;
-    color: white;
+    color: black;
     font-size: 1.2rem;
 }
 
 button:nth-of-type(1) {
-    background-color: lightgreen;
+    background-color: white;
 }
 
 button:hover {
-    background-color: black;
+    background-color: lightgreen;
 }
 
 #reset {
-    background-color: lightcoral;
+    background-color: white;
 }
 
 #reset:hover {
-    background-color: black;
+    background-color: lightcoral;
 }
 
 #current-date {

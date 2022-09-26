@@ -11,7 +11,7 @@ function getCurrentDate() {
     document.getElementById('current-date').innerHTML = `The current date is ${currentDateINT} and the time is ${currentTimeINT}`
     // Writes in HTML each single value (day, month, year, hours and minutes)
     document.getElementById('day').innerHTML = `Day: ${currentDate.getDate()}`
-    document.getElementById('month').innerHTML = `Month: ${currentDate.getMonth()}`
+    document.getElementById('month').innerHTML = `Month: ${currentDate.getMonth() + 1}`
     document.getElementById('year').innerHTML = `Year: ${currentDate.getFullYear()} `
     document.getElementById('hours').innerHTML = `Hours: ${currentDate.getHours()} `
     document.getElementById('minutes').innerHTML = `Minutes: ${currentDate.getMinutes()} `
@@ -24,9 +24,24 @@ function getCurrentDate() {
 setInterval(() => {
     let currentDate = new Date()
     let currentTimeIT = currentDate.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit', seconds: '2-digit' })
-    document.getElementById('curr-hours').innerHTML = currentDate.getHours()
-    document.getElementById('curr-minutes').innerHTML = currentDate.getMinutes()
-    document.getElementById('curr-seconds').innerHTML = currentDate.getSeconds()
+    if (currentDate.getHours() < 10) {
+        document.getElementById('curr-hours').innerHTML = `0${currentDate.getHours()}`
+    }
+    else {
+        document.getElementById('curr-hours').innerHTML = currentDate.getHours()
+    }
+    if (currentDate.getMinutes() < 10) {
+        document.getElementById('curr-minutes').innerHTML = `0${currentDate.getMinutes()}`
+    }
+    else {
+        document.getElementById('curr-minutes').innerHTML = currentDate.getMinutes()
+    }
+    if (currentDate.getSeconds() < 10) {
+        document.getElementById('curr-seconds').innerHTML = `0${currentDate.getSeconds()}`
+    }
+    else {
+        document.getElementById('curr-seconds').innerHTML = currentDate.getSeconds()
+    }
 }, 1000);
 
 // Function for countdown
@@ -45,7 +60,12 @@ function printCountDown() {
     }
     let newTime = time.getTime() - 10
     time.setTime(newTime)
-    document.getElementById('countdown').innerHTML = `0${time.getMinutes()}:${time.getSeconds()}`
+    if (time.getSeconds() > 9) {
+        document.getElementById('countdown').innerHTML = `0${time.getMinutes()}:${time.getSeconds()}`
+    }
+    else {
+        document.getElementById('countdown').innerHTML = `0${time.getMinutes()}:0${time.getSeconds()}`
+    }
 }
 
 function resetCountDown() {
